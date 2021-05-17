@@ -5,6 +5,7 @@ class BaseModel{
         return $conn;
     }
 
+
     function all(){
         $conn = $this->getConnect();
         $query = "select * from " . $this->table;
@@ -18,6 +19,11 @@ class BaseModel{
         // thực hiện lệnh tìm 1 bản ghi dựa vào id => select * from tên bảng where id = $id 
     }
 
+    // $userModel = new User();
+    // $listUser = $userModel->search('email', 'like', "%thien%");
+    // $listUser = $userModel->search('id', '>', "10");
+    // => select * from users where email like '%thien%'
+    // => select * from users where id > 10
     function search($colName, $condition, $value)
     {
         // thực hiện câu lệnh tìm kiếm 1 điều kiện => select * from tên bảng where $colName $condition $value => danh sách
