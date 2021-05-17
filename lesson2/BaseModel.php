@@ -35,15 +35,23 @@ class BaseModel{
     }
 
     function insert($data = []){
-        // $data = [
-        //     'name' => 'value',
-        //     'email' => 'value',
-        //     'role' => 'value',
-        //     'password' => 'value'
-        // ];
-        // dựa vào key & value của mảng data => câu lệnh insert vào bảng tương ứng
-        // insert into users (name, email, role, password) values ('gtri name', 'gtri email', 'gtrirole', 'gtri password');
-        // return luôn bản ghi vừa insert
+        $columnName = "";
+        $valuesStr = "";
+        foreach($data as $key => $value){
+            $columnName .=  "$key,";
+            $valuesStr .= "'$value',";
+        }
+        $columnName = rtrim($columnName, ",");
+        $valuesStr = rtrim($valuesStr, ",");
+        echo "<pre>";
+        // var_dump($data, $columnName, $valuesStr);
+        $query = "insert into " . $this->table 
+            . " ($columnName) values ($valuesStr)";
+        $conn = $this->getConnect();
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $data["id"] = $conn->lastInsertId();
+        return $data;
     }
 
     function update ($data = []){

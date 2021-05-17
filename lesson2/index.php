@@ -27,7 +27,11 @@ if(isset($_GET['keyword']) && $_GET['keyword'] != ""){
     <?php foreach($listProduct as $pro):?>
         <tr>
             <td><?= $pro['id'] ?></td>
-            <td><?= $pro['name'] ?></td>
+            <td>
+                <a href="detail-product.php?id=<?= $pro['id'] ?>">
+                    <?= $pro['name'] ?>
+                </a>
+            </td>
             <td><?= $pro['cate_name'] ?></td>
             <td><?= $pro['price'] ?></td>
         </tr>
