@@ -1,0 +1,21 @@
+Tạo ra lớp Bia kế thừa lớp sản phẩm, có các thuộc tính & phương thức sau:
+các thuộc tính protected:
+- nguyên liệu
+- nồng độ cồn
+
+các thuộc tính private:
+- ngày sản xuất
+- ngày hết hạn
+- số calo
+
+các phương thức private:
+- getNgayHetHan(): trả về ngày hết hạn của đối tượng + với 15 ngày (ví dụ ngày hết hạn trong 
+thuộc tính là ngày 19/05/2021 thì sau khi chạy hàm này sẽ trả về ngày 03/06/2021)
+
+- getCalo(): trả về số calo của đối tượng trừ đi 10% (ví dụ 1 object bia có lượng calo là 
+400 thì khi gọi hàm này chỉ trả về 360)
+
+phương thức public:
+- phương thức getProductInfo(): overwrite lại phương thức của lớp cha, trong này có gọi đến 2 phương thức
+private của lớp hiện tại để hiển thị cho người dùng thông tin của sản phẩm, tuy nhiên các thông tin 
+này đều đã được xử lý
