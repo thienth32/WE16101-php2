@@ -1,0 +1,12 @@
+từ lớp sản phẩm đã có ở bài 1, tạo lớp kế thừa của nó là lớp Bánh Chocopie
+lớp này có thêm các thuộc tính và phương thức sau:
+- thuộc tính màu sắc
+- thuộc tính cơ sở sản xuất
+- thuộc tính hạn sử dụng
+- phương thức getProductInfo() - đây là phương thức overwrite lại phương thức của lớp cha, hiển thị 
+thêm những thông tin của lớp Chocopie được bổ sung
+- phương thức setExpireTime() - nhận 1 tham số, sử dụng để cập nhật lại thời gian hết hạn của sản phẩm 
+Chocopie
+
+========================================================================
+yêu cầu như b1, tự thực hiện thêm 3 object thuộc lớp chocopie sau đó demo các phương thức của lớp này
