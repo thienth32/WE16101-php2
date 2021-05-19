@@ -1,0 +1,20 @@
+Tạo lớp trong php để mô phỏng lại sản phẩm, biết rằng trong yêu cầu của dự án Sản phẩm cần 
+quản lý được các thông tin sau:
+mã sản phẩm
+tên sản phẩm
+ảnh sản phẩm
+giá tiền
+thời gian bảo hành
+hãng sản xuất
+
+việc quản trị sản phẩm có thể thực hiện các hành động
+1. phương thức __construct() nhận 6 tham số để khởi tạo dữ liệu cho 1 đối tượng sản phẩm mới
+2. getProductInfo() - hiển thị tất cả các thông tin của đối tượng sản phẩm
+3. setName() - nhận 1 giá trị truyền vào tham số để cập nhật lại tên của sản phẩm
+4. setPrice() - nhận 1 giá trị tham số để cập nhật lại giá của sản phẩm
+
+
+========================================================================
+** tạo 5 sản phẩm và thực hiện hiển thị, cập nhật, gán lại giá, tên cho tất cả các sản phẩm vừa tạo
+phần này tự nghĩ cách trình bày, nếu trình bày giống nhau thì auto 0 điểm tất cả những người giống nhau
+về cả giao diện và dữ liệu hoặc code
