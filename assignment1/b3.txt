@@ -1,0 +1,6 @@
+tự suy nghĩ & set các modifier cho các thuộc tính của lớp Sản phẩm, để có thể thỏa mãn các yêu cầu 
+giữ an toàn cho các dữ liệu 
+- thời gian bảo hành (chỉ có thể truy xuất từ các lớp kế thừa)
+- hãng sản xuất (chỉ có thể truy xuất từ lớp Sản phẩm)
+
+Tự tạo ra các hàm get/set để demo việc lấy & gán giá trị cho các thuộc tính này.
