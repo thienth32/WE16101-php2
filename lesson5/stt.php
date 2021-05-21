@@ -9,9 +9,20 @@ class BaseModel {
 
     static function all(){
         $model = new static();
-        var_dump($model);
-        $query = "select * from $model->table";
-        return $query;
+        $model->queryBuilder = "select * from $model->table";
+        return $model;
+    }
+
+    public function where($col, $condition, $value){
+        $this->queryBuilder .= " where $col $condition '$value'";
+        return $this;
+    }
+
+    public function get(){
+        $connect = new PDO("mysql:host=127.0.0.1;dbname=kaopiz;charset=utf8", "root", "12345678");
+        $stmt = $connect->prepare($this->queryBuilder);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 }
 
@@ -25,7 +36,9 @@ class Product extends BaseModel{
 }
 
 
-User::all();
+var_dump(User::all()->get()); 
+
+// select * from users where name like '%thienth%'
 
 
 ?>
