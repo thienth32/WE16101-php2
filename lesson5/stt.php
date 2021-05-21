@@ -36,7 +36,7 @@ class Product extends BaseModel{
 }
 
 
-var_dump(User::all()->get()); 
+var_dump(Product::all()->where('name', 'like', '%thienth%')->get()); 
 
 // select * from users where name like '%thienth%'
 

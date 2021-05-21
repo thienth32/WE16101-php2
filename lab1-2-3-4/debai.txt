@@ -1,0 +1,9 @@
+Mỗi bạn tự chọn cho mình 1 bảng trong db kaopiz (đã được đính kèm file sql lên classroom)
+sau đó tự xây dựng ra các màn hình để thực hiện các chức năng:
+Hiển thị danh sách
+Thêm 
+Sửa
+Xóa
+cho cái bảng mà mình lựa chọn, sử dụng class BaseModel được viết sẵn trong file này để thực hiện
+Gợi ý: quản lý bảng nào thì tạo class tên bảng và kế thừa lớp BaseModel để sử dụng lại các hàm đã được viết
+trong BaseModel
