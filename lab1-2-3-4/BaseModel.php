@@ -5,7 +5,7 @@ class BaseModel
 	
 	protected function getConnect()
 	{
-        $conn = new PDO('mysql:host=127.0.0.1;dbname=kaopiz;charset=utf8', 'root', '12345678');
+        $conn = new PDO('', 'xxxxx', 'xxxxx');
         return $conn;
     }
     
@@ -43,7 +43,9 @@ class BaseModel
 		foreach ($arr as $key => &$value) {
 			$stmt->bindParam(":$key", $value);
 		}
+		
 		$stmt->bindParam(":id", $this->id);
+		// var_dump($arr, $this->queryBuilder);die;
 		$stmt->execute();
 	}
 	public static function rawQuery($sqlQuery){
@@ -90,7 +92,6 @@ class BaseModel
  	public static function where($arr){
  		$model = new static();
  		$model->queryBuilder = "select * from $model->tableName where $arr[0] $arr[1] '$arr[2]'";
-
  		return $model;
  	}
 
