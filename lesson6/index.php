@@ -1,12 +1,21 @@
 <?php
-require_once './app/controllers/HomeController.php';
-require_once './app/controllers/ProductController.php';
-require_once './app/controllers/UserController.php';
-require_once './app/models/Product.php';
-use App\Models\Product;
-use App\Controllers\HomeController;
-$ctr = new HomeController();
-echo $ctr->index();
+require_once './vendor/autoload.php';
+
+$url = isset($_GET['url']) ? $_GET['url'] : "/";
+switch ($url) {
+    case '/':
+        $ctr = new \App\Controllers\HomeController();
+        $ctr->index();
+        break;
+    case 'chi-tiet':
+        $ctr = new \App\Controllers\ProductController();
+        $ctr->detail();
+        break;
+    default:
+        echo "Duong dan khong ton tai";
+        die;
+        break;
+}
 
 
 ?>

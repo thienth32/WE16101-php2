@@ -2,7 +2,11 @@
 namespace App\Controllers;
 class HomeController{
     public function index(){
-        return "HomeController => index()";
+        echo "HomeController => index()";
+    }
+
+    public function detail(){
+        echo "HomeController => detail()";
     }
 }
 
