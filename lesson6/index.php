@@ -12,7 +12,7 @@ switch ($url) {
         $ctr->detail();
         break;
     default:
-        echo "Duong dan khong ton tai";
+        echo "Đường dẫn không tồn tại";
         die;
         break;
 }
