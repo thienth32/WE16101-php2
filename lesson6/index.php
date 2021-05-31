@@ -1,5 +1,6 @@
 <?php
 require_once './vendor/autoload.php';
+require_once './config/database.php';
 
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 switch ($url) {

@@ -7,11 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    Tổng số sản phẩm: <?= count($products ) ?>
-    <ul>
-        <?php foreach($products as $pro):?>
-            <li><?= $pro['id']?> - <?= $pro['name']?></li>
-        <?php endforeach?>
-    </u>    
+    <h3>Sản phẩm: <?= $product->name ?></h3>
+    <p>Danh mục <?= $product->category->cate_name ?></p>
+    <?php foreach($product->galleries as $img):?>
+        <img src="<?= $img->img_url ?>" width="50px">
+    <?php endforeach ?>
 </body>
 </html>
