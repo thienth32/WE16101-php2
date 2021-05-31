@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Sản phẩm: <?= $product->name ?></h3>
-    <p>Danh mục <?= $product->category->cate_name ?></p>
-    <?php foreach($product->galleries as $img):?>
-        <img src="<?= $img->img_url ?>" width="50px">
-    <?php endforeach ?>
+    <h3>Sản phẩm: {{ $product->name }}</h3>
+    <p>Danh mục {{$product->category->cate_name}}</p>
+    @foreach ($product->galleries as $img)
+        <img src="{{$img->img_url}}" width="50px">
+    @endforeach
 </body>
 </html>
