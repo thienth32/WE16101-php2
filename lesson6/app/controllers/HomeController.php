@@ -4,12 +4,11 @@ use App\Models\Product;
 
 class HomeController extends BaseController{
     public function index(){
-        $product = Product::find(345);
-        $product->load('category', 'galleries');
+        // lấy ra & hiển thị danh sách các sản phẩm
+        $products = Product::all();
+        $products->load('category');
         
-        $this->render('clients.homepage', [
-            'product' => $product
-        ]);
+        $this->render('clients.homepage', compact('products'));
     }
 
     public function detail(){

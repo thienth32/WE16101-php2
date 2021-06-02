@@ -5,10 +5,10 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => 'mysql',
-    'host'      => '34.87.184.177',
-    'database'  => 'kaopiz_php2',
-    'username'  => 'master',
-    'password'  => 'ho@ngTien339',
+    'host'      => '127.0.0.1',
+    'database'  => 'kaopiz',
+    'username'  => 'root',
+    'password'  => '12345678',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',

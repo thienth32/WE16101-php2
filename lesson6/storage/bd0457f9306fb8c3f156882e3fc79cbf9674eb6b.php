@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Sản phẩm: <?php echo e($product->name); ?></h3>
-    <p>Danh mục <?php echo e($product->category->cate_name); ?></p>
-    <?php $__currentLoopData = $product->galleries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <img src="<?php echo e($img->img_url); ?>" width="50px">
+<?php $__env->startSection('title', 'Trang chủ'); ?>
+<?php $__env->startSection('content'); ?>
+    <h2>Danh sách sản phẩm</h2>
+    <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div style="border: 1px solid #ccc; display: inline-block;">
+            <h3>Sản phẩm: <?php echo e($pro->name); ?></h3>
+            <p>Giá: <?php echo e($pro->price); ?></p>
+            <p>Danh mục: <?php echo e($pro->category->cate_name); ?></p>
+        </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</body>
-</html><?php /**PATH /Library/WebServer/Documents/WE16101-php2/lesson6/app/views/clients/homepage.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+    
+
+
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Library/WebServer/Documents/WE16101-php2/lesson6/app/views/clients/homepage.blade.php ENDPATH**/ ?>

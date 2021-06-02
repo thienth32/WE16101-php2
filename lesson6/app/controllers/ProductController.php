@@ -1,8 +1,8 @@
 <?php 
 namespace App\Controllers;
-class ProductController{
+class ProductController extends BaseController{
     public function detail(){
-        echo "ProductController => detail()";
+        $this->render('clients.detail');
     }
 }
 
