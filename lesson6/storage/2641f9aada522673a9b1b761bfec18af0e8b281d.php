@@ -1,0 +1,2 @@
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Library/WebServer/Documents/WE16101-php2/lesson6/app/views/admin/dashboard/index.blade.php ENDPATH**/ ?>
