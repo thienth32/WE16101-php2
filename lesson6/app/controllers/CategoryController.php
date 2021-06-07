@@ -11,6 +11,10 @@ class CategoryController extends BaseController{
         $this->render('admin.category.index', compact('cates'));
     }
 
+    public function addForm(){
+        $this->render('admin.category.add-form');
+    }
+
 }
 
 

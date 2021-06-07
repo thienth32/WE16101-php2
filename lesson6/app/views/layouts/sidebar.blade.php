@@ -2,7 +2,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="{{'./public/adminlte/'}}dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="{{BASE_URL . '/public/adminlte/'}}dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
         <a href="#" class="d-block">Alexander Pierce</a>
@@ -15,7 +15,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
-          <a href="#" class="nav-link">
+          <a href="{{BASE_URL}}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -33,13 +33,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/layout/top-nav.html" class="nav-link">
+              <a href="{{BASE_URL . 'danh-muc'}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+              <a href="{{BASE_URL . 'danh-muc/add'}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Tạo mới</p>
               </a>
@@ -57,13 +57,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/layout/top-nav.html" class="nav-link">
+              <a href="{{BASE_URL . 'san-pham'}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+              <a href="{{BASE_URL . 'san-pham/add'}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Tạo mới</p>
               </a>
