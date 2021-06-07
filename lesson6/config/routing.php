@@ -12,6 +12,9 @@ $router = new RouteCollector();
 $router->get('/', [HomeController::class, 'index']);
 $router->get('danh-muc', [CategoryController::class, 'index']);
 $router->get('danh-muc/add', [CategoryController::class, 'addForm']);
+$router->post('danh-muc/add', [CategoryController::class, 'saveAdd']);
+$router->get('danh-muc/edit/{id}', [CategoryController::class, 'editForm']);
+$router->post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit']);
 
 
 

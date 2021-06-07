@@ -22,7 +22,7 @@
                                 <td>{{$item->show_menu == 1 ? "Có" : "Không"}}</td>
                                 <td>{{count($item->products)}}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="{{BASE_URL . 'danh-muc/edit/' . $item->id}}" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="" class="btn btn-sm btn-danger">Xóa</a>
                                 </td>
                             </tr>

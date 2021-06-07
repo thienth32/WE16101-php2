@@ -15,6 +15,43 @@ class CategoryController extends BaseController{
         $this->render('admin.category.add-form');
     }
 
+    public function saveAdd(){
+        $requestData = $_POST;
+        if(!isset($requestData['show_menu'])){
+            $requestData['show_menu'] = null;
+        }
+        $model = new Category();
+        $model->fill($requestData);
+        $model->save();
+        header('location: ' . BASE_URL . 'danh-muc');
+    }
+
+    public function editForm($id){
+        $cate = Category::find($id);
+        if(!$cate){
+            header('location: ' . BASE_URL . 'danh-muc');
+            die;
+        }
+
+        $this->render('admin.category.edit-form', compact('cate'));
+    }
+
+    public function saveEdit($id){
+        $model = Category::find($id);
+        if(!$model){
+            header('location: ' . BASE_URL . 'danh-muc');
+            die;
+        }
+        $requestData = $_POST;
+        if(!isset($requestData['show_menu'])){
+            $requestData['show_menu'] = null;
+        }
+        // $model = new Category();
+        $model->fill($requestData);
+        $model->save();
+        header('location: ' . BASE_URL . 'danh-muc');
+    }
+
 }
 
 
