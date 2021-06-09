@@ -2,19 +2,40 @@
 
 use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
+use App\Controllers\LoginController;
+use App\Controllers\ProductController;
 use Phroute\Phroute\RouteCollector;
 
 
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 
 $router = new RouteCollector();
+############ - filter - #############
+$router->filter('auth', function(){
+    if(!isset($_SESSION['AUTH']) || empty($_SESSION['AUTH'])){
+        header('location: ' . BASE_URL . 'login');
+        die;
+    }
+});
+############ - end filter - #############
+
+
 
 $router->get('/', [HomeController::class, 'index']);
 $router->get('danh-muc', [CategoryController::class, 'index']);
-$router->get('danh-muc/add', [CategoryController::class, 'addForm']);
-$router->post('danh-muc/add', [CategoryController::class, 'saveAdd']);
-$router->get('danh-muc/edit/{id}', [CategoryController::class, 'editForm']);
-$router->post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit']);
+
+$router->group(['before' => 'auth'], function($router){
+    $router->get('danh-muc/add', [CategoryController::class, 'addForm']);
+    $router->post('danh-muc/add', [CategoryController::class, 'saveAdd']);
+    $router->get('danh-muc/edit/{id}', [CategoryController::class, 'editForm']);
+    $router->post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit']);
+});
+
+
+$router->get('login', [LoginController::class, 'loginForm']);
+$router->get('demo-upload', [ProductController::class, 'uploadForm']);
+$router->post('demo-upload', [ProductController::class, 'saveImage']);
+$router->get('san-pham/add', [ProductController::class, 'addForm']);
 
 
 

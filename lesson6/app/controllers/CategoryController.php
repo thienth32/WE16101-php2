@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Category;
+use Product;
 
 class CategoryController extends BaseController{
     public function index(){
@@ -49,6 +50,20 @@ class CategoryController extends BaseController{
         // $model = new Category();
         $model->fill($requestData);
         $model->save();
+        header('location: ' . BASE_URL . 'danh-muc');
+    }
+
+    public function remove($id){
+        $model = Category::find($id);
+        if(!$model){
+            header('location: ' . BASE_URL . 'danh-muc');
+            die;
+        }
+        $products = Product::where('cate_id', $id)->get();
+        foreach ($products as $key => $item) {
+            $item->delete();
+        }
+        $model->delete();
         header('location: ' . BASE_URL . 'danh-muc');
     }
 
