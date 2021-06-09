@@ -33,6 +33,8 @@ $router->group(['before' => 'auth'], function($router){
 
 
 $router->get('login', [LoginController::class, 'loginForm']);
+$router->post('login', [LoginController::class, 'postLogin']);
+
 $router->get('demo-upload', [ProductController::class, 'uploadForm']);
 $router->post('demo-upload', [ProductController::class, 'saveImage']);
 $router->get('san-pham/add', [ProductController::class, 'addForm']);
