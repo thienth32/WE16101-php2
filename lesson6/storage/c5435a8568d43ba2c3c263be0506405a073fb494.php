@@ -1,12 +1,20 @@
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <?php if($_SESSION['AUTH']): ?>
       <div class="image">
         <img src="<?php echo e(BASE_URL . '/public/adminlte/'); ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block"><?php echo e($_SESSION['AUTH']['name']); ?></a>
       </div>
+      <?php else: ?>
+      
+      <div class="info">
+        
+        <a href="<?php echo e(BASE_URL); ?>login" class="d-block"><i class="fa fa-user text-white"></i> Đăng nhập</a>
+      </div>
+      <?php endif; ?>
     </div>
 
     <!-- Sidebar Menu -->
@@ -69,6 +77,14 @@
               </a>
             </li>
           </ul>
+        </li>
+        <li class="nav-item menu-open">
+          <a href="<?php echo e(BASE_URL); ?>logout" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Đăng xuất
+            </p>
+          </a>
         </li>
       </ul>
     </nav>
