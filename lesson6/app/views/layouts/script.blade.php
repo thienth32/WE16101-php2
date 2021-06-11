@@ -26,6 +26,10 @@
 <script src="{{BASE_URL . '/public/adminlte/'}}plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="{{BASE_URL . '/public/adminlte/'}}plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="{{BASE_URL . '/public/adminlte/'}}dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->

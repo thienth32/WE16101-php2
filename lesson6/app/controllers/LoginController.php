@@ -9,6 +9,7 @@ class LoginController extends BaseController{
         // dd(password_hash('123456', PASSWORD_DEFAULT));
         $this->render('auth.login', compact('msg'));
     }
+
     public function postLogin(){
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -25,12 +26,19 @@ class LoginController extends BaseController{
                 'role' => $user->role,
                 'email' => $user->email
             ];
-            header('location: ' . BASE_URL . 'danh-muc');
+            header('location: ' . BASE_URL);
             die;
         }
+
         header('location: ' . BASE_URL . 'login?msg=Tài khoản/mật khẩu không đúng');
         die;
 
+    }
+
+    public function logout(){
+        unset($_SESSION['AUTH']);
+        header('location: '. BASE_URL);
+        die;
     }
 }
 

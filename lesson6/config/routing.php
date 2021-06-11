@@ -29,11 +29,14 @@ $router->group(['before' => 'auth'], function($router){
     $router->post('danh-muc/add', [CategoryController::class, 'saveAdd']);
     $router->get('danh-muc/edit/{id}', [CategoryController::class, 'editForm']);
     $router->post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit']);
+    $router->post('danh-muc/check-name', 
+        [CategoryController::class, 'checkNameExisted']);
 });
 
 
 $router->get('login', [LoginController::class, 'loginForm']);
 $router->post('login', [LoginController::class, 'postLogin']);
+$router->any('logout', [LoginController::class, 'logout']);
 
 $router->get('demo-upload', [ProductController::class, 'uploadForm']);
 $router->post('demo-upload', [ProductController::class, 'saveImage']);

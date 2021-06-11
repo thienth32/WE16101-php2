@@ -18,6 +18,24 @@ class CategoryController extends BaseController{
 
     public function saveAdd(){
         $requestData = $_POST;
+        // validate cate_name => 1 - không để trống | 2 - không đc trùng tên với các record khác
+        $errors = [];
+        if(strlen($requestData['cate_name']) <= 0){
+            $errors['cate_name'] = "Hãy nhập tên danh mục";
+        }else if(Category::where('cate_name', $requestData['cate_name'])->count() > 0){
+            $errors['cate_name'] = "Tên danh mục đã tồn tại";
+        }
+
+        if(strlen($requestData['detail']) <= 0){
+            $errors['detail'] = "Hãy nhập mô tả";
+        }
+
+        if(count($errors) > 0){
+            
+            $this->render('admin.category.add-form', compact('errors'));
+            die;
+        }
+
         if(!isset($requestData['show_menu'])){
             $requestData['show_menu'] = null;
         }
@@ -65,6 +83,12 @@ class CategoryController extends BaseController{
         }
         $model->delete();
         header('location: ' . BASE_URL . 'danh-muc');
+    }
+
+    public function checkNameExisted(){
+        $name = $_POST['cate_name'];
+        $count = Category::where('cate_name', $name)->count();
+        echo json_encode($count == 0);
     }
 
 }
