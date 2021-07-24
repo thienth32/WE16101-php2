@@ -1,0 +1,20 @@
+{
+    "name": "thienth/lesson6",
+    "authors": [
+        {
+            "name": "thienth",
+            "email": "thienth32@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^8.44",
+        "phroute/phroute": "^2.1",
+        "illuminate/events": "^8.44",
+        "jenssegers/blade": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
