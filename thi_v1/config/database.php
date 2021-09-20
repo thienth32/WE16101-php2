@@ -6,9 +6,9 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => '127.0.0.1',
-    'database'  => 'thi_php2_v1',
+    'database'  => 'thi_php2_v2',
     'username'  => 'root',
-    'password'  => '12345678',
+    'password'  => '',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
